@@ -22,12 +22,6 @@ public class DataNasabahController {
     @PostMapping("/nasabah")
     public ResponseEntity<String> createDataNasabah(@RequestBody DataNasabah dataNasabah) {
         try {
-            DataNasabah create = new DataNasabah();
-            create.setId(dataNasabah.getId());
-            create.setNIK(dataNasabah.getNIK());
-            create.setNoHp(dataNasabah.getNoHp());
-            create.setEmail(dataNasabah.getEmail());
-            create.setDOB(dataNasabah.getDOB());
             repository.save(dataNasabah);
             return ResponseEntity.ok("200 (sukses)");
         } catch (Exception e) {
